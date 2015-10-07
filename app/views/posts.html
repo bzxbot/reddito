@@ -1,0 +1,16 @@
+{{ console.log(posts) }}
+<div ng-repeat="(postId, post) in posts">
+	{{ console.log(postId) }}
+	<a ng-href="{{ post.url }}">{{ post.title }}</a>
+	<a ng-click="deletePost(postId)">delete</a>
+</div>
+
+
+<form ng-submit="submitPost()">
+	<input type="text" ng-model="post.title" />
+	<input type="text" ng-model="post.url" />
+	<input type="submit" value="Add Post" />
+</form>
+
+<p>Posts: {{ posts }}</p>
+<p>Post: {{ post }}</p>
